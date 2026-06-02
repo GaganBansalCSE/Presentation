@@ -35,15 +35,21 @@ export default function App() {
   const CurrentComponent = slides[currentSlide].component;
 
   const nextSlide = () => {
-    if (currentSlide < slides.length - 1) {
-      setCurrentSlide(currentSlide + 1);
-    }
+    setCurrentSlide(prev => {
+      if (prev < slides.length - 1) {
+        return prev + 1;
+      }
+      return prev;
+    });
   };
 
   const prevSlide = () => {
-    if (currentSlide > 0) {
-      setCurrentSlide(currentSlide - 1);
-    }
+    setCurrentSlide(prev => {
+      if (prev > 0) {
+        return prev - 1;
+      }
+      return prev;
+    });
   };
 
   const goToSlide = (index) => {
@@ -52,12 +58,26 @@ export default function App() {
 
   useEffect(() => {
     const handleKeyPress = (e) => {
-      if (e.key === 'ArrowRight') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
+      if (e.key === 'ArrowRight') {
+        setCurrentSlide(prev => {
+          if (prev < slides.length - 1) {
+            return prev + 1;
+          }
+          return prev;
+        });
+      }
+      if (e.key === 'ArrowLeft') {
+        setCurrentSlide(prev => {
+          if (prev > 0) {
+            return prev - 1;
+          }
+          return prev;
+        });
+      }
     };
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentSlide]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-offwhite via-emerald-50 to-offwhite">
