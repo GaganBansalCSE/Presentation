@@ -1,61 +1,60 @@
-# T.Stanes Summer Internship Project Presentation
+# T.Stanes Summer Internship Project - Interactive Website
 
-A professional React 18-based interactive web presentation for Summer Internship Projects at T.Stanes and Company Limited in the agribusiness and agri-input sector.
+## 🎯 Overview
 
-## 🎯 Project Overview
+This is now a **single-page interactive website** (not a presentation). The entire project is showcased on one scrollable page with interactive sections, smooth animations, and engaging content.
 
-This presentation showcases two major research projects:
+## ✨ Key Features
 
-### Major Project
-**"Exploring Alternate Distribution Channels for Agri Inputs through Institutional and Digital Ecosystems"**
-- Study of alternate distribution channels beyond traditional dealer networks
-- Analysis of institutional farmer ecosystems (FPOs, PACS, Cooperatives)
-- Exploration of digital and e-commerce expansion opportunities
-- Strategic recommendations for scalable rural expansion
+### 🎨 Interactive Website Experience
+- **Single Page Layout**: All content integrated into one scrollable page
+- **Smooth Scrolling Navigation**: Click navigation items to smoothly scroll to sections
+- **Sticky Header**: Navigation header stays accessible while scrolling
+- **Scroll-to-Top Button**: Quick return to top with floating action button
+- **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
+- **Animated Sections**: Smooth fade-in animations as you scroll
+- **Interactive Cards**: Expandable sections with detailed information
 
-### Minor Project
-**"Comparative Digital Marketing Analysis and Strategic Recommendations for T.Stanes"**
-- Competitor benchmarking across digital channels
-- Content strategy analysis
-- Digital execution model recommendations
+### 🏗️ Website Structure
 
-## 🛠 Technology Stack
+The website is organized into the following sections:
 
-- **Frontend Framework**: React 18
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS 3
-- **UI Components**: shadcn/ui & Lucide Icons
-- **Font**: Times New Roman (serif)
-- **Color Scheme**: Emerald Green & Offwhite
+1. **Hero Section** - Eye-catching introduction with call-to-action
+2. **About** - Company overview, products, and geographic reach
+3. **Projects** - Interactive tabs switching between Major and Minor projects
+4. **Research** - Research methodology and geographic outreach details
+5. **Findings** - Key findings and statistics from field visits
+6. **Insights** - Strategic insights and recommendations
+7. **Digital** - Digital marketing analysis and competitor benchmarking
+8. **Footer** - Contact information and quick links
 
-## 📋 Presentation Slides
+### 🔧 Technology Stack
 
-1. **Cover Slide** - Title, projects, presenter information
-2. **Company Overview** - T.Stanes background, product portfolio, geographic reach
-3. **Project Objectives** - Major and minor project goals
-4. **Research Approach** - Methodology, data collection, outreach strategy
-5. **Field Visits** - Key visits and learnings
-6. **Alternate Channels** - Channel exploration overview
-7. **Cooperatives & PACS** - Strategic opportunities and challenges
-8. **Contract Farming & E-Commerce** - B2B partnerships and digital expansion
-9. **Key Insights & Recommendations** - Strategic findings
-10. **Digital Marketing Analysis** - Competitor benchmarking
-11. **Digital Execution Model** - Recommended structure
-12. **Overall Learnings & Impact** - Summary and deliverables
-13. **Thank You** - Closing slide
+- **React 18**: Modern frontend framework
+- **Vite**: Lightning-fast build tool
+- **Tailwind CSS 3**: Utility-first styling
+- **Lucide React**: Beautiful SVG icons
+- **Times New Roman**: Professional serif typography
+
+### 📱 Responsive Design
+
+The website is fully responsive and optimized for:
+- Desktop displays (1920x1080+)
+- Tablets (1024x768+)
+- Mobile devices (320px+)
 
 ## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js 16+ and npm 8+
 
-### Installation
+### Installation & Development
 
 ```bash
 # Install dependencies
 npm install
 
-# Start development server
+# Start development server (opens at http://localhost:5173/)
 npm run dev
 
 # Build for production
@@ -63,125 +62,176 @@ npm run build
 
 # Preview production build
 npm run preview
-```
 
-### Development Server
-The development server will start at `http://localhost:5173/`
-
-## 🎨 Design Features
-
-- **Professional Corporate Style**: McKinsey/Deloitte-inspired design
-- **Premium Layout**: Clean, minimal, and visually appealing
-- **Visual-Heavy**: Emphasis on diagrams, infographics, and flowcharts
-- **Responsive Design**: Works on desktop and tablet devices
-- **Smooth Navigation**: 
-  - Use arrow buttons at the bottom
-  - Use arrow keys on keyboard (← →)
-  - Click on slide numbers for direct navigation
-  - Click home icon to return to cover
-
-### Color Palette
-- **Emerald Green**: Primary color (#15803d, #16a34a, #166534, #145231)
-- **Offwhite**: Secondary color (#f5f5f0)
-- **Forest Green**: Accent color (from emerald range)
-
-## 📊 Project Structure
-
-```
-src/
-├── App.jsx                 # Main application component
-├── main.jsx               # Entry point
-├── index.css              # Tailwind CSS configuration
-└── slides/
-    ├── CoverSlide.jsx
-    ├── CompanyOverview.jsx
-    ├── ProjectObjectives.jsx
-    ├── ResearchApproach.jsx
-    ├── FieldVisits.jsx
-    ├── AlternateChannels.jsx
-    ├── CooperativesPACS.jsx
-    ├── ContractFarming.jsx
-    ├── KeyInsights.jsx
-    ├── DigitalMarketing.jsx
-    ├── DigitalExecution.jsx
-    ├── OverallLearnings.jsx
-    └── ThankYou.jsx
+# Run linting
+npm run lint
 ```
 
 ## 🎮 Navigation
 
-### Button Controls
-- **Previous (←)**: Go to previous slide
-- **Next (→)**: Go to next slide
-- **Home**: Return to cover slide
-- **Slide Numbers**: Click any number to jump to that slide
+### Desktop Navigation
+- Use the sticky header to navigate to any section
+- Smooth scroll to section on click
+- Hover effects on navigation items
 
-### Keyboard Shortcuts
-- **Arrow Right**: Next slide
-- **Arrow Left**: Previous slide
+### Mobile Navigation
+- Hamburger menu for easy access
+- Touch-friendly button sizes
+- Same smooth scrolling behavior
 
-## 📱 Responsive Design
+### Keyboard & Mouse
+- Smooth scroll behavior on all browsers
+- Scroll-to-top button appears after scrolling
+- Tab-friendly navigation
 
-The presentation is optimized for:
-- Desktop displays (1920x1080 and above)
-- Tablet displays (1024x768 and above)
-- Maximum width container with centered layout
+## 🎨 Interactive Elements
 
-## 🔧 Customization
+### Expandable Project Cards
+- Click on project cards to expand and see detailed information
+- Smooth animations on expand/collapse
+- Visual chevron indicator for expand state
 
-### Modify Colors
-Edit `tailwind.config.js` to change the emerald or offwhite colors:
+### Tabbed Projects Section
+- Switch between Major and Minor projects
+- Smooth fade-in transitions
+- Active tab highlighting
 
-```javascript
-colors: {
-  emerald: {
-    // Emerald green shades
-  },
-  offwhite: '#f5f5f0',
-}
+### Hover Effects
+- Cards lift up on hover with shadow effects
+- Navigation items show underline animation
+- Buttons scale and change color on interaction
+
+## 📊 Content Sections
+
+### Hero Section
+- Professional introduction with company branding
+- Animated scroll indicator
+- Call-to-action button
+
+### About Section
+- Company legacy and presence
+- Product portfolio showcase
+- Geographic reach information
+
+### Projects Section
+- Major project: "Exploring Alternate Distribution Channels..."
+- Minor project: "Comparative Digital Marketing Analysis..."
+- Interactive tabs with detailed objectives
+
+### Research Section
+- Research methodology (4 approaches)
+- Geographic outreach coverage
+- Beautiful card-based layout
+
+### Findings Section
+- 6 key findings with color-coded cards
+- Statistics: 50+ field visits, 200+ farmers engaged, 15+ institutions studied, 5 states covered
+- Gradient cards with icons
+
+### Insights Section
+- 5 key insights with numbered display
+- 6 strategic recommendations
+- Strategic direction summary
+
+### Digital Section
+- Competitor benchmarking with progress bars
+- 4 content strategy pillars
+- Execution model recommendations
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: Emerald Green (#15803d - #166534)
+- **Secondary**: Offwhite (#f5f5f0)
+- **Accents**: Forest Green shades
+- **Text**: Dark emerald on light backgrounds
+
+### Typography
+- **Font Family**: Times New Roman, serif
+- **Headings**: Bold, emerald-900 color
+- **Body**: Regular weight, emerald-800 color
+- **Sizes**: Responsive scaling
+
+### Animations
+- **Fade In**: Content sections fade in on view
+- **Slide In**: Header and modals slide in
+- **Hover Animations**: Cards lift and scale
+- **Scroll Effects**: Smooth scroll behavior
+
+## 📦 Project Structure
+
+```
+src/
+├── App.jsx                          # Main app component (single-page layout)
+├── main.jsx                         # React DOM entry point
+├── index.css                        # Tailwind + custom animations
+├── components/
+│   ├── Header.jsx                   # Sticky header with navigation
+│   ├── Hero.jsx                     # Hero section
+│   ├── About.jsx                    # Company overview
+│   ├── Projects.jsx                 # Interactive projects tabs
+│   ├── Research.jsx                 # Research approach & methodology
+│   ├── Findings.jsx                 # Field findings & statistics
+│   ├── Insights.jsx                 # Key insights & recommendations
+│   ├── Digital.jsx                  # Digital marketing strategy
+│   └── Footer.jsx                   # Footer with contact info
+└── slides/
+    └── [Legacy slide components - still available for reference]
+
+Configuration Files:
+├── vite.config.js
+├── tailwind.config.js
+├── postcss.config.js
+├── package.json
+└── index.html
 ```
 
-### Modify Fonts
-Change global font in `index.css`:
+## 🌟 Highlights
 
-```css
-* {
-  font-family: 'Times New Roman', serif;
-}
-```
+### Single Page Benefits
+✓ No page load delays - instant navigation
+✓ Better user engagement with continuous scrolling
+✓ All information in one cohesive narrative
+✓ Professional website feel vs. presentation style
+✓ Mobile-friendly and responsive
+✓ Easy to share single URL
 
-### Add/Remove Slides
-1. Create new slide component in `src/slides/`
-2. Import in `App.jsx`
-3. Add to `slides` array with id, title, and component
+### Interactive Features
+✓ Smooth scrolling navigation
+✓ Expandable content cards
+✓ Tab-based project switching
+✓ Animated section transitions
+✓ Responsive design
+✓ Sticky navigation header
+✓ Scroll-to-top button
 
-## 📦 Production Build
+### Performance
+- CSS: 20.88 kB (4.38 kB gzipped)
+- JS: 225.36 kB (68.29 kB gzipped)
+- Fast build time (~600ms)
+- Optimized for modern browsers
 
-The build output is optimized for deployment:
-- Minified CSS: 16.28 kB (3.68 kB gzipped)
-- Minified JS: 257.84 kB (71.91 kB gzipped)
+## 🚀 Deployment
 
-Deploy the `dist/` folder to any static hosting service.
+The production build is ready to deploy to:
+- Vercel
+- Netlify
+- GitHub Pages
+- AWS S3 + CloudFront
+- Any static hosting service
 
-## 👤 Presenter Information
+Simply deploy the `dist/` folder.
 
-- **Name**: Gagan Bansal
-- **Duration**: 8 weeks, Summer 2024
-- **Sector**: Agribusiness & Agri-Inputs
-- **Company**: T.Stanes and Company Limited
+## 📝 Data Integration
 
-## 📝 Key Features
+The website is designed to integrate with your data files:
+- `fpo india.xlsx` - FPO data for analysis
+- `sip major project (1).docx` - Major project details
+- `sip minor.docx` - Minor project details
 
-✓ Professional corporate-style presentation
-✓ Comprehensive research findings
-✓ Strategic recommendations
-✓ Visual-focused design
-✓ Interactive navigation
-✓ Responsive layout
-✓ Premium look and feel
-✓ Keyboard and mouse navigation support
+Content is currently hardcoded but can be connected to Excel data sources for dynamic content.
 
-## 🎓 Learning Outcomes
+## 🎓 Learning & Features
 
 The internship provided exposure to:
 - Institutional farmer ecosystems
@@ -191,10 +241,28 @@ The internship provided exposure to:
 - Digital marketing strategy and execution
 - Agribusiness market analysis
 
-## 📄 License
+## 📝 About the Project
 
-This presentation is proprietary to T.Stanes and Company Limited and Gagan Bansal.
+**Project Presenter**: Gagan Bansal
+**Duration**: 8 weeks, Summer 2024
+**Company**: T.Stanes and Company Limited
+**Sector**: Agribusiness & Agri-Inputs
+
+## 🔗 Quick Links
+
+- **Development**: `npm run dev`
+- **Production Build**: `npm run build`
+- **Lint Check**: `npm run lint`
+- **Preview**: `npm run preview`
+
+## 📞 Contact
+
+For inquiries about this project:
+- Email: gagan@tstanes.com
+- Company: T.Stanes and Company Limited
 
 ---
 
-**Created for MBA SIP Review and Final Submission** | Summer 2024
+**Status**: ✅ Complete and Ready for Use
+**Last Updated**: June 2, 2026
+**Version**: 2.0.0 (Single-Page Website)

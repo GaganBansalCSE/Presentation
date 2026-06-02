@@ -1,4 +1,4 @@
-import { Handshake, TrendingUp, Zap } from 'lucide-react';
+import { Handshake, Zap } from 'lucide-react';
 
 export default function ContractFarming() {
   return (
