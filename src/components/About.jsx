@@ -1,4 +1,4 @@
-import { MapPin, Award, Leaf, Globe } from 'lucide-react';
+import { MapPin, Award, Leaf } from 'lucide-react';
 
 export default function About() {
   return (

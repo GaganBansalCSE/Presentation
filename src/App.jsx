@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Leaf, Award, Target, Globe, BarChart3, Lightbulb, CheckCircle, MapPin, Users, BookOpen } from 'lucide-react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
