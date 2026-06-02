@@ -1,156 +1,87 @@
-import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Home } from 'lucide-react';
-import CoverSlide from './slides/CoverSlide';
-import CompanyOverview from './slides/CompanyOverview';
-import ProjectObjectives from './slides/ProjectObjectives';
-import ResearchApproach from './slides/ResearchApproach';
-import FieldVisits from './slides/FieldVisits';
-import AlternateChannels from './slides/AlternateChannels';
-import CooperativesPACS from './slides/CooperativesPACS';
-import ContractFarming from './slides/ContractFarming';
-import KeyInsights from './slides/KeyInsights';
-import DigitalMarketing from './slides/DigitalMarketing';
-import DigitalExecution from './slides/DigitalExecution';
-import OverallLearnings from './slides/OverallLearnings';
-import ThankYou from './slides/ThankYou';
-
-const slides = [
-  { id: 0, title: 'Cover', component: CoverSlide },
-  { id: 1, title: 'Company Overview', component: CompanyOverview },
-  { id: 2, title: 'Project Objectives', component: ProjectObjectives },
-  { id: 3, title: 'Research Approach', component: ResearchApproach },
-  { id: 4, title: 'Field Visits', component: FieldVisits },
-  { id: 5, title: 'Alternate Channels', component: AlternateChannels },
-  { id: 6, title: 'Cooperatives & PACS', component: CooperativesPACS },
-  { id: 7, title: 'Contract Farming', component: ContractFarming },
-  { id: 8, title: 'Key Insights', component: KeyInsights },
-  { id: 9, title: 'Digital Marketing', component: DigitalMarketing },
-  { id: 10, title: 'Digital Execution', component: DigitalExecution },
-  { id: 11, title: 'Overall Learnings', component: OverallLearnings },
-  { id: 12, title: 'Thank You', component: ThankYou },
-];
+import { useState } from 'react';
+import { Menu, X, ChevronDown, Leaf, Award, Target, Globe, BarChart3, Lightbulb, CheckCircle, MapPin, Users, BookOpen } from 'lucide-react';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Research from './components/Research';
+import Findings from './components/Findings';
+import Insights from './components/Insights';
+import Digital from './components/Digital';
+import Footer from './components/Footer';
 
 export default function App() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const CurrentComponent = slides[currentSlide].component;
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('major');
 
-  const nextSlide = () => {
-    setCurrentSlide(prev => {
-      if (prev < slides.length - 1) {
-        return prev + 1;
-      }
-      return prev;
-    });
+  const scrollToSection = (id) => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
   };
-
-  const prevSlide = () => {
-    setCurrentSlide(prev => {
-      if (prev > 0) {
-        return prev - 1;
-      }
-      return prev;
-    });
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
-
-  useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === 'ArrowRight') {
-        setCurrentSlide(prev => {
-          if (prev < slides.length - 1) {
-            return prev + 1;
-          }
-          return prev;
-        });
-      }
-      if (e.key === 'ArrowLeft') {
-        setCurrentSlide(prev => {
-          if (prev > 0) {
-            return prev - 1;
-          }
-          return prev;
-        });
-      }
-    };
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-offwhite via-emerald-50 to-offwhite">
-      {/* Main Slide Container */}
-      <div className="min-h-screen flex items-center justify-center p-8">
-        <div className="w-full max-w-6xl bg-offwhite rounded-lg shadow-2xl overflow-hidden">
-          <CurrentComponent />
-        </div>
-      </div>
+    <div className="bg-offwhite">
+      {/* Header */}
+      <Header scrollToSection={scrollToSection} mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 
-      {/* Navigation Controls */}
-      <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-emerald-900 via-emerald-800 to-transparent p-6">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          {/* Previous Button */}
-          <button
-            onClick={prevSlide}
-            disabled={currentSlide === 0}
-            className="p-3 rounded-full bg-emerald-700 text-offwhite hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-            title="Previous slide"
-          >
-            <ChevronLeft size={24} />
-          </button>
+      {/* Hero Section */}
+      <Hero scrollToSection={scrollToSection} />
 
-          {/* Slide Counter and Thumbnail Navigation */}
-          <div className="flex flex-col items-center gap-4 flex-1 mx-6">
-            <div className="text-offwhite text-lg font-semibold">
-              {currentSlide + 1} / {slides.length}
-            </div>
-            
-            {/* Slide Thumbnails */}
-            <div className="flex gap-2 flex-wrap justify-center max-w-3xl">
-              {slides.map((slide, index) => (
-                <button
-                  key={slide.id}
-                  onClick={() => goToSlide(index)}
-                  className={`px-3 py-1 rounded text-sm transition-all ${
-                    index === currentSlide
-                      ? 'bg-emerald-700 text-offwhite font-bold'
-                      : 'bg-emerald-600 text-offwhite hover:bg-emerald-500'
-                  }`}
-                  title={slide.title}
-                >
-                  {index + 1}
-                </button>
-              ))}
-            </div>
-            
-            {/* Slide Title */}
-            <div className="text-offwhite text-sm opacity-90">
-              {slides[currentSlide].title}
-            </div>
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gradient-to-br from-offwhite to-emerald-50">
+        <About />
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-bold text-emerald-900 mb-4">Research Projects</h2>
+            <div className="h-1 w-32 bg-gradient-to-r from-emerald-700 to-emerald-500 mx-auto"></div>
           </div>
+          <Projects activeTab={activeTab} setActiveTab={setActiveTab} />
+        </div>
+      </section>
 
-          {/* Home Button */}
-          <button
-            onClick={() => goToSlide(0)}
-            className="p-3 rounded-full bg-emerald-700 text-offwhite hover:bg-emerald-600 transition-all mr-3"
-            title="Go to cover"
-          >
-            <Home size={24} />
-          </button>
+      {/* Research Approach */}
+      <section id="research" className="py-20 bg-gradient-to-br from-emerald-50 to-emerald-100">
+        <Research />
+      </section>
 
-          {/* Next Button */}
-          <button
-            onClick={nextSlide}
-            disabled={currentSlide === slides.length - 1}
-            className="p-3 rounded-full bg-emerald-700 text-offwhite hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
-            title="Next slide"
+      {/* Field Findings */}
+      <section id="findings" className="py-20 bg-white">
+        <Findings />
+      </section>
+
+      {/* Key Insights */}
+      <section id="insights" className="py-20 bg-gradient-to-br from-offwhite to-emerald-50">
+        <Insights />
+      </section>
+
+      {/* Digital Analysis */}
+      <section id="digital" className="py-20 bg-white">
+        <Digital />
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 bg-gradient-to-r from-emerald-700 to-emerald-900 text-offwhite">
+        <div className="max-w-6xl mx-auto px-6 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Distribution Channels?</h2>
+          <p className="text-xl mb-8 opacity-90">Explore institutional ecosystems and digital opportunities for sustainable growth</p>
+          <button 
+            onClick={() => scrollToSection('about')}
+            className="bg-offwhite text-emerald-900 px-8 py-3 rounded-lg font-bold hover:bg-emerald-50 transition-colors"
           >
-            <ChevronRight size={24} />
+            Learn More
           </button>
         </div>
-      </div>
+      </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
